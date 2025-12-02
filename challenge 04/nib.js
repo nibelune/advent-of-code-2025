@@ -1,4 +1,3 @@
-// read input.txt file
 import fs from "fs";
 const input = fs.readFileSync("input.txt", "utf8");
 const ranges = input.split(",");
