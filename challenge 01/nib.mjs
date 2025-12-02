@@ -1,10 +1,6 @@
-// read input.txt file
 import fs from "fs";
 
-// read input.txt file
 const input = fs.readFileSync("input.txt", "utf8");
-
-// parse input.txt file
 const moves = input.split("\n");
 
 let position = 50;
