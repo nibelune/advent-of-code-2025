@@ -6,11 +6,11 @@ batteries.pop();
 let counter = 0;
 
 function maxNumberOfLength(line, numberLength = 12) {
-  const n = line.length;
-  if (n < numberLength) return null;
+  const lineLength = line.length;
+  if (lineLength < numberLength) return null;
 
   const stack = [];
-  let toRemove = n - numberLength;
+  let toRemove = lineLength - numberLength;
 
   for (const digit of line) {
     while (
