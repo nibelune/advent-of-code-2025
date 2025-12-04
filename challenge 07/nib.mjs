@@ -39,13 +39,13 @@ const counter = rolls.reduce((total, value, index) => {
 }, 0);
 
 function getCase(cases, size, col, row) {
-  if (parcelExists(col, row, size)) {
+  if (caseExists(col, row, size)) {
     return cases[col + row * size];
   }
   return null;
 }
 
-function parcelExists(col, row, size) {
+function caseExists(col, row, size) {
   return col >= 0 && row >= 0 && col < size && row < size;
 }
 
