@@ -2,3 +2,4 @@ node_modules/
 .zed/
 .DS_Store
 input.txt
+eslint.config.js
