@@ -8,6 +8,9 @@ const ranges = part1
 const ids = part2.split("\n");
 ids.pop();
 
+console.log(ranges);
+console.log(ids);
+
 let freshCounter = 0;
 idLoop: for (const id of ids) {
   for (const range of ranges) {

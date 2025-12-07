@@ -23,7 +23,7 @@ if ($handle) {
                 {
                     $removedItems[] = [$currentRow, $currentCol];
                     $result++;
-                }   
+                }
             }
         }
         
