@@ -67,4 +67,4 @@ function solveAll(input) {
   return total;
 }
 
-console.log("part 1 - grand total : ", solveAll(input));
+console.log("part 1 - grand total : ", solveAll(input)); // -> 4722948564882
