@@ -11,7 +11,7 @@ function collectFreshIngredientsIds(data) {
                 .map(range => range.split("-")
                 .map(limit => +limit));
   
-  // console.log(ranges);
+  // console.log(ranges); // -> [[3,5], [10,14], ...]
   return ranges;
 }
 
@@ -41,4 +41,3 @@ function findFreshIngredients(data) {
 }
 
 console.log("Part 1 - Number of fresh ingredients : ", findFreshIngredients(input)); // -> 896
-
