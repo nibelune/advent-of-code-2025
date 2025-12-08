@@ -22,7 +22,7 @@ function findFreshIngredients(data) {
   // list of ordered ranges
   const ranges = collectFreshIngredientsIds(data);
 
-  let freshCount = 0;
+  let freshIngredientsCount = 0;
   let currentMax = -1;
 
   // for each range, check if it overlaps with the previous max
@@ -31,12 +31,12 @@ function findFreshIngredients(data) {
     const end = range[1];
 
     if (start <= end) {
-      freshCount += (end - start + 1);
+      freshIngredientsCount += (end - start + 1);
       currentMax = end;
     }
   }
 
-  return freshCount;
+  return freshIngredientsCount;
 }
 
-console.log("Part 1 - Number of fresh ingredients : ", findFreshIngredients(input)); // -> 
+console.log("Part 1 - Number of fresh ingredients : ", findFreshIngredients(input)); // -> 346240317247002
