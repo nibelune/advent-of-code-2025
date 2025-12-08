@@ -5,6 +5,8 @@ const data = input.split("\n").map(line => line.split(""));
 
 let splitCounter = 0;
 
+const frames = [input, ]
+
 // downward movement, from second line
 for (let lineIndex = 1; lineIndex < data.length; lineIndex++) {
 
@@ -42,7 +44,20 @@ for (let lineIndex = 1; lineIndex < data.length; lineIndex++) {
       splitCounter++;
     }
   }
+
+  // store frame for debug
+  frames.push([...data].map(line => [...line].join("")).join("\n"));
 }
 
-// console.table(data);
+
+// animation output for fun
+
+for (let f = 0; f < frames.length; f++) {
+  console.clear();
+  const frame = frames[f];
+  console.log(frame);
+  await new Promise(r => setTimeout(r, 100));
+}
+
 console.log("Part 1 - beam split count : ", splitCounter); // -> 1698
+
