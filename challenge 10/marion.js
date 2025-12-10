@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 debugger;
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const filePath = join(__dirname, 'input-test.txt');
+const filePath = join(__dirname, 'input.txt');
 
 (async () => {
     const file = await open(filePath);
@@ -27,24 +27,26 @@ const filePath = join(__dirname, 'input-test.txt');
     }
 
     freshRanges.sort((a, b) => {
-        return a[0] - b[0];
+        return a[0] - b[0]
     })
 
-    freshRanges.forEach((value, index) => {
+    freshRanges.forEach((value) => {
         
-        if (value[1] > maxId) maxId = value[1]; // c'est ici que ça ne va pas... je n'ai pas la bonne logique pour stocker jusqu'où mon comptage doit aller...
-        if (index < freshRanges.length-1) {
-            if (value[1] < freshRanges[index+1][0])
+        if (value[1] < maxId) {
+            return;
+        }
+        else  {
+
+            if (value[0] > maxId) {
                 freshIngredientID += value[1] - value[0]+1;
-            else 
-                freshIngredientID += freshRanges[index+1][0] - value[0];
+            }
+            else {
+                freshIngredientID += value[1] - maxId;
+            }
         }
-        else {
-            freshIngredientID += value[1] - value[0]+1;
-            freshIngredientID += maxId - value[1];
-        }
-        
+                
+        if (value[1] > maxId) maxId = value[1];
     })
 
-    console.log("freshIngredientID",freshIngredientID);
+    console.log("freshIngredientID",freshIngredientID)
 })()
